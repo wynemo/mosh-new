@@ -1,1 +1,6 @@
-[{"user":"foo", "pwd":"bar"}, {"user":"blahblah", "pwd":"papapa"}]
+{
+  "server":"server_ip",
+  "server_port":50232,
+  "allowed": [{"user":"foo", "pwd":"bar"}, {"user":"blahblah", "pwd":"papapa"}]
+}
+
