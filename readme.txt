@@ -12,3 +12,11 @@ mosh.config is a nginx config example.
 
 run 'python wsgi.py', it will listen 8080, then nginx will proxy it.
 
+
+
+another approach:
+
+run remote-cmd.py in server
+
+run mosh.sh in command line
+
