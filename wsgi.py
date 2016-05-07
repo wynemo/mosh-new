@@ -19,8 +19,7 @@ allowed = ()
 
 with open(CONFIG_FILE, 'rb') as f:
     o = json.load(f)
-    f.close()
-    for i in o:
+    for i in o['allowed']:
         allowed += ((i['user'], i['pwd']), )
 
 

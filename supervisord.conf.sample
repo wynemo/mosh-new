@@ -1,0 +1,8 @@
+[program:mymosh]
+command=/path/to/python3 /path/to/remote-cmd.py
+environment=LANG=en_US.UTF-8,HOME="/home/foo",PATH="/usr/local/bin:/usr/bin:/bin"
+user=foo
+autostart=true
+autorestart=true
+stdout_logfile=/tmp/mymosh.log
+stderr_logfile=/tmp/mymosh.err.log

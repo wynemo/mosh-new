@@ -1,0 +1,20 @@
+remote="server_ip"
+local_cmd='./local-cmd.py'
+
+export LD_LIBRARY_PATH=/tmp/
+
+
+info=`python $local_cmd | grep 'MOSH CONNECT' | sed  's/MOSH CONNECT//g' | tr -d '\r\n'`
+read -a port_key <<< "${info}"
+port=${port_key[0]}
+key=${port_key[1]}
+
+echo "///$port///"
+echo "///$key///"
+tmp=`host server_domain | awk '/has address/ { print $4 ; exit }'`
+if ! [[ -z "$tmp" ]]
+then
+   remote=$tmp
+fi
+MOSH_KEY=$key mosh-client $remote $port
+                                                                                                                
