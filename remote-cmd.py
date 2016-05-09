@@ -44,4 +44,5 @@ while 1:
             set_winsize(fd, 32, 100)
             os.waitpid(pid, 0)
             data = os.read(fd, 1024)
+            os.close(fd)
             s.sendto(encode(data), address)
