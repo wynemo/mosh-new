@@ -34,10 +34,6 @@ while 1:
     data, address = s.recvfrom(64*1024)
     cmd = decode(data)
     if cmd == b'mosh-server':
-        def read(fd):
-            data = os.read(fd, 1024)
-            s.sendto(encode(data.encode()), address)
-            return data
         pid, fd = os.forkpty()
         if pid == 0:
             time.sleep(1)
